@@ -1,26 +1,99 @@
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700,800,900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-gold: #e8a85f;
+  --color-gold-dim: #c8893a;
+  --color-gold-muted: #af9888;
+  --color-cream: #fff7dd;
+  --color-bg: #080808;
+  --color-card: #0f0f0f;
+
+  --font-switzer: 'Switzer', 'Inter', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: #fff7dd;
+  font-family: 'Switzer', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #e8a85f;
+  color: #000;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #c8893a; border-radius: 2px; }
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #e8a85f 0%, #f5d49a 50%, #c8893a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 40s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(232, 168, 95, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 168, 95, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.card-border {
+  border: 1px solid rgba(232, 168, 95, 0.1);
+}
+
+.card-border:hover {
+  border-color: rgba(232, 168, 95, 0.3);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.float { animation: float 6s ease-in-out infinite; }
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(232, 168, 95, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(232, 168, 95, 0.4); }
 }
