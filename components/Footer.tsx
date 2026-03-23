@@ -25,19 +25,18 @@ export default function Footer() {
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "rgba(255,247,221,0.4)" }}>
               AI Agents for Singapore&apos;s small and medium businesses. Deploy in 2 weeks. Results from day one.
             </p>
-            <div className="mt-6 flex items-center gap-4">
-              {["LinkedIn", "Instagram", "WhatsApp"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="text-xs font-medium transition-colors duration-200"
-                  style={{ color: "rgba(255,247,221,0.3)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#e8a85f")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,247,221,0.3)")}
-                >
-                  {social}
-                </a>
-              ))}
+            <div className="mt-6">
+              <a
+                href="https://wa.me/6589386813"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium transition-colors duration-200"
+                style={{ color: "rgba(255,247,221,0.3)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#e8a85f")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,247,221,0.3)")}
+              >
+                WhatsApp
+              </a>
             </div>
           </div>
 
@@ -47,7 +46,7 @@ export default function Footer() {
               Services
             </p>
             <ul className="space-y-3">
-              {["Customer Support AI", "Sales Qualifier", "Operations AI", "Booking Agent", "Document AI", "Voice AI"].map((item) => (
+              {["Lead Management", "Lead Generation", "LLM Optimisation", "Customer Service Dashboard", "Internal Operations"].map((item) => (
                 <li key={item}>
                   <a
                     href="#services"
@@ -68,7 +67,7 @@ export default function Footer() {
               Company
             </p>
             <ul className="space-y-3">
-              {["About", "Process", "Industries", "Pricing", "Contact"].map((item) => (
+              {["About", "Pricing", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
@@ -91,7 +90,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(232,168,95,0.06)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,247,221,0.2)" }}>
-            © 2025 FORMA Pte Ltd · Singapore · UEN 202XXXXXXX
+            © 2025 FORMA Pte Ltd · UEN 202XXXXXXX
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Service"].map((link) => (

@@ -14,12 +14,16 @@ export default function Contact() {
       />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">
-        <p
-          className="text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ color: "#e8a85f" }}
+        <div
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase mb-8"
+          style={{
+            background: "rgba(232,168,95,0.08)",
+            border: "1px solid rgba(232,168,95,0.2)",
+            color: "#e8a85f",
+          }}
         >
-          Get Started
-        </p>
+          Free Discovery Call
+        </div>
         <h2
           className="font-black leading-tight tracking-tight mb-6"
           style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: "#fff7dd" }}
@@ -30,16 +34,14 @@ export default function Contact() {
           className="text-base leading-relaxed mb-12 max-w-xl mx-auto"
           style={{ color: "rgba(255,247,221,0.5)" }}
         >
-          Drop us a message on WhatsApp and we&apos;ll get back to you within the hour. No forms, no waiting — just a real conversation.
+          Drop us a message on WhatsApp. No forms, no waiting — just a real conversation.
         </p>
 
         {/* What to expect */}
         <div className="flex flex-wrap items-center justify-center gap-6 mb-14">
           {[
-            "Free 1-hour discovery call",
             "AI recommendations with ROI estimates",
             "Clear implementation timeline",
-            "No pushy sales tactics",
           ].map((item, i) => (
             <span
               key={i}
@@ -79,7 +81,7 @@ export default function Contact() {
         </a>
 
         <p className="mt-5 text-sm" style={{ color: "rgba(255,247,221,0.25)" }}>
-          We typically reply within 60 minutes during business hours.
+          We respond during business hours.
         </p>
       </div>
     </section>
