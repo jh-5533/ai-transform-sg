@@ -4,52 +4,39 @@ import { useState } from "react";
 
 const plans = [
   {
-    name: "Starter",
-    price: { monthly: 499, annual: 399 },
-    description: "Perfect for SMBs deploying their first AI agent.",
+    name: "Growth",
+    price: { monthly: 500, annual: 400 },
+    description: "One powerful AI agent to start automating your most important workflow.",
     features: [
       "1 AI Agent (your choice)",
-      "WhatsApp or Website integration",
-      "Up to 1,000 conversations/mo",
-      "Standard response templates",
-      "Email support",
+      "WhatsApp + Website integration",
+      "Lead Management or Customer Service",
+      "Up to 3,000 conversations/mo",
+      "CRM & calendar integrations",
+      "Priority support",
       "Monthly performance report",
     ],
     cta: "Get Started",
     highlight: false,
+    badge: null,
   },
   {
-    name: "Growth",
-    price: { monthly: 999, annual: 799 },
-    description: "For growing businesses ready to automate multiple workflows.",
-    features: [
-      "Up to 3 AI Agents",
-      "WhatsApp + Website + Email",
-      "Up to 5,000 conversations/mo",
-      "CRM & calendar integrations",
-      "Priority support (24hr response)",
-      "Weekly performance reports",
-      "Agent optimisation sessions",
-    ],
-    cta: "Start Growing",
-    highlight: true,
-    badge: "Most Popular",
-  },
-  {
-    name: "Scale",
+    name: "Enterprise",
     price: { monthly: null, annual: null },
-    description: "For businesses with complex needs and multiple touchpoints.",
+    description: "Full-stack AI transformation across sales, marketing, and operations.",
     features: [
       "Unlimited AI Agents",
+      "All 5 agent types included",
       "All channels + custom integrations",
       "Unlimited conversations",
       "Custom training & fine-tuning",
       "Dedicated account manager",
-      "SLA-backed support",
+      "99.9% SLA-backed uptime",
       "Quarterly business reviews",
     ],
     cta: "Talk to Us",
-    highlight: false,
+    highlight: true,
+    badge: "Most Popular",
   },
 ];
 
@@ -80,23 +67,33 @@ export default function Pricing() {
           {/* Toggle */}
           <div className="mt-8 inline-flex items-center gap-3">
             <span
-              className="text-sm font-medium"
+              className="text-sm font-medium select-none"
               style={{ color: !annual ? "#fff7dd" : "rgba(255,247,221,0.4)" }}
             >
               Monthly
             </span>
             <button
-              onClick={() => setAnnual(!annual)}
-              className="relative w-12 h-6 rounded-full transition-colors duration-200 flex-shrink-0"
-              style={{ background: annual ? "#e8a85f" : "rgba(255,255,255,0.1)" }}
+              onClick={() => setAnnual((v) => !v)}
+              aria-label="Toggle annual pricing"
+              className="relative flex-shrink-0 rounded-full transition-colors duration-300"
+              style={{
+                width: "48px",
+                height: "28px",
+                background: annual ? "#e8a85f" : "rgba(255,255,255,0.12)",
+              }}
             >
               <span
-                className="absolute top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200"
-                style={{ transform: annual ? "translateX(26px)" : "translateX(4px)" }}
+                className="absolute rounded-full bg-white transition-all duration-300"
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  top: "4px",
+                  left: annual ? "24px" : "4px",
+                }}
               />
             </button>
             <span
-              className="text-sm font-medium"
+              className="text-sm font-medium select-none"
               style={{ color: annual ? "#fff7dd" : "rgba(255,247,221,0.4)" }}
             >
               Annual
@@ -110,8 +107,8 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Plans */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Plans — centered 2 column */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
           {plans.map((plan, i) => (
             <div
               key={i}
@@ -125,7 +122,7 @@ export default function Pricing() {
             >
               {plan.badge && (
                 <span
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1 rounded-full"
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap"
                   style={{ background: "#e8a85f", color: "#080808" }}
                 >
                   {plan.badge}
@@ -134,7 +131,7 @@ export default function Pricing() {
 
               <div className="mb-6">
                 <h3
-                  className="font-bold text-lg mb-2"
+                  className="font-bold text-xl mb-2"
                   style={{ color: plan.highlight ? "#e8a85f" : "#fff7dd" }}
                 >
                   {plan.name}
@@ -157,10 +154,7 @@ export default function Pricing() {
                     <span style={{ color: "rgba(255,247,221,0.4)", marginBottom: "4px" }}>/mo</span>
                   </div>
                 ) : (
-                  <span
-                    className="font-black text-4xl"
-                    style={{ color: "#fff7dd" }}
-                  >
+                  <span className="font-black text-4xl" style={{ color: "#fff7dd" }}>
                     Custom
                   </span>
                 )}
@@ -184,14 +178,11 @@ export default function Pricing() {
 
               <a
                 href="#contact"
-                className="text-center py-3.5 rounded-full font-semibold text-sm transition-all duration-200"
+                className="block text-center py-3.5 rounded-full font-semibold text-sm transition-all duration-200"
                 style={
                   plan.highlight
                     ? { background: "#e8a85f", color: "#080808" }
-                    : {
-                        border: "1px solid rgba(232,168,95,0.2)",
-                        color: "#fff7dd",
-                      }
+                    : { border: "1px solid rgba(232,168,95,0.2)", color: "#fff7dd" }
                 }
                 onMouseEnter={(e) => {
                   if (plan.highlight) {

@@ -1,8 +1,8 @@
 const stats = [
-  { value: "10×", label: "Faster response time", sub: "vs human agents" },
-  { value: "60%", label: "Reduction in admin work", sub: "average across clients" },
+  { value: "$10K+", label: "Saved in monthly expenses", sub: "per client, on average" },
+  { value: "99.9%", label: "Uptime SLA", sub: "always on, always responsive" },
   { value: "24/7", label: "Always available", sub: "no sick days, no holidays" },
-  { value: "2 wks", label: "Time to deploy", sub: "from kickoff to live" },
+  { value: "14 days", label: "Time to deploy", sub: "from kickoff to live" },
 ];
 
 export default function Stats() {
@@ -20,7 +20,7 @@ export default function Stats() {
             <div key={i} className="text-center lg:text-left">
               <div
                 className="font-black leading-none mb-2 text-gold-gradient"
-                style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}
+                style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
               >
                 {stat.value}
               </div>

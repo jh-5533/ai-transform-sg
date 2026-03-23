@@ -4,7 +4,6 @@ import MarqueeStrip from "@/components/MarqueeStrip";
 import Services from "@/components/Services";
 import Stats from "@/components/Stats";
 import Process from "@/components/Process";
-import Industries from "@/components/Industries";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
@@ -20,7 +19,6 @@ export default function Home() {
         <Services />
         <Stats />
         <Process />
-        <Industries />
         <Testimonials />
         <Pricing />
         <Contact />
