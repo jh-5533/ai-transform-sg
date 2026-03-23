@@ -85,7 +85,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {/* WhatsApp */}
           <a
-            href="https://wa.me/6591234567"
+            href="https://wa.me/6589386813"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-base transition-all duration-200"
