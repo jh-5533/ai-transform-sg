@@ -80,8 +80,17 @@ export default function Contact() {
           Chat with us on WhatsApp
         </a>
 
-        <p className="mt-5 text-sm" style={{ color: "rgba(255,247,221,0.25)" }}>
-          We respond during business hours.
+        <p className="mt-4 text-sm" style={{ color: "rgba(255,247,221,0.25)" }}>
+          or call/text us at{" "}
+          <a
+            href="tel:+6589386813"
+            className="transition-colors duration-200"
+            style={{ color: "rgba(255,247,221,0.45)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#e8a85f")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,247,221,0.45)")}
+          >
+            +65 8938 6813
+          </a>
         </p>
       </div>
     </section>

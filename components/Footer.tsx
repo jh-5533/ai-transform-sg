@@ -25,7 +25,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "rgba(255,247,221,0.4)" }}>
               AI Agents for Singapore&apos;s small and medium businesses. Deploy in 2 weeks. Results from day one.
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col gap-2">
               <a
                 href="https://wa.me/6589386813"
                 target="_blank"
@@ -36,6 +36,15 @@ export default function Footer() {
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,247,221,0.3)")}
               >
                 WhatsApp
+              </a>
+              <a
+                href="tel:+6589386813"
+                className="text-xs font-medium transition-colors duration-200"
+                style={{ color: "rgba(255,247,221,0.3)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#e8a85f")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,247,221,0.3)")}
+              >
+                +65 8938 6813
               </a>
             </div>
           </div>
